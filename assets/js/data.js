@@ -12,7 +12,8 @@ const SITE = {
   eyebrow: "AI 产品经理 · 求职中",
   tagline: "用 AI 打造真正好用的产品。",
   github: "https://github.com/your-github-username",   // 👈 改成你的 GitHub 主页
-  email: "yourname@example.com",                        // 👈 改成你的邮箱
+  // 邮箱为【倒序存储】防爬：真实邮箱需倒过来填写（例如 abc@x.com 写成 moc.x@cba）
+  email: "moc.361@52382000581",
 
   // 关于我
   about: "我是一名专注于 AI 领域的产品经理，相信好的产品源于对用户与技术的双重理解。这里收录了我的项目作品与技能，欢迎了解。",
@@ -83,7 +84,6 @@ const SITE = {
   // 页脚链接
   footerLinks: [
     { label: "GitHub", url: "https://github.com/your-github-username" },
-    { label: "邮箱", url: "mailto:yourname@example.com" },
     { label: "回到顶部", url: "#top" },
   ],
 

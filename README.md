@@ -33,7 +33,7 @@ python3 -m http.server 8000
 
 - `name` / `nameEn` — 你的名字
 - `title` / `eyebrow` / `tagline` — 职位与一句话介绍
-- `github` / `email` — 你的链接
+- `github` / `email` — 你的链接（邮箱为倒序存储防爬，填写时需倒序）
 - `about` — 关于我
 - `highlights` — 数字亮点（如 "5+ 年经验"）
 - `projects` — 项目列表，每个项目一个对象，`github` 填对应仓库链接

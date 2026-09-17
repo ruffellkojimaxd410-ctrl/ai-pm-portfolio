@@ -18,7 +18,7 @@
     if (SITE.github && SITE.github !== "#") navGh.href = SITE.github;
 
     const contactEmail = document.getElementById("contactEmail");
-    contactEmail.href = "mailto:" + SITE.email;
+    contactEmail.href = "mailto:" + decodeEmail();
     const contactGh = document.getElementById("contactGithub");
     if (SITE.github) contactGh.href = SITE.github;
   }
@@ -88,9 +88,11 @@
     document.getElementById("contactSub").textContent = SITE.contactSub;
 
     const fl = document.getElementById("footerLinks");
-    fl.innerHTML = SITE.footerLinks.map(function (l) {
+    const emailLink = '<a href="mailto:' + decodeEmail() + '">邮箱</a>';
+    const links = SITE.footerLinks.map(function (l) {
       return '<a href="' + escapeHtml(l.url) + '">' + escapeHtml(l.label) + '</a>';
     }).join("");
+    fl.innerHTML = emailLink + links;
 
     document.getElementById("footerFine").textContent = SITE.copyright;
   }
@@ -132,6 +134,11 @@
   }
 
   /* ---------- 工具 ---------- */
+  // 邮箱防爬：data.js 中倒序存储，这里解码还原
+  function decodeEmail() {
+    return String(SITE.email).split("").reverse().join("");
+  }
+
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")
